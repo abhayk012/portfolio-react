@@ -44,9 +44,9 @@ const Skills = () => {
         whileInView="visible"
         viewport={{ once: true }}
       > 
-        {skills.map((skill) => (
+        {skills.map((skill,index) => (
           <motion.li 
-            key={uniqid()} 
+            key={index} 
             className='skills__list-item btn btn--plain'
             variants={item}
             whileHover={{ scale: 1.1 }}
