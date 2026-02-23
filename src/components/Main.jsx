@@ -11,8 +11,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-// import { createContext } from 'react';
+import { motion } from 'framer-motion'
 
+
+// import { createContext } from 'react';
 
 
 // export const ThemeContext = React.createContext(null)
@@ -24,7 +26,7 @@ function Main() {
   }
   return (
     <>
-     <Navbar expand="lg" className="nav">
+     <Navbar expand="lg" className="nav" fixed="top">
       <Container className='navcontainer'>
         <Navbar.Brand href="#home" className='navname'><span style={{color:"green"}}>AK</span> Portfolio</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -43,30 +45,96 @@ function Main() {
    
 
 
-
-
-      
-        <div className='d-flex'>
-          
-        </div>
-        <div className='d-flex'>
-        <div className='myname '>
-          <h1 className="title">Hi Iam Abhay Krishnan</h1>
-            <h2 style={{color:"red"}}>Web Developer</h2>
-            <p><span style={{color:"green"}}>THIS</span> IS MY OFFICIAL PORTFOLIO WEBSITE TO DESCRIBE ALL <br />
-          DETAILS AND WORK EXPERIENCE WEB DEVELOPMENT.</p>
-            <a class="download" href={cv} target="_blank">DOWNLOAD/VIEW CV</a>
-            </div>
+        <motion.div 
+          className='hero-container'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className='myname '>
+            <motion.h1 
+              className="title"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              Hi Iam Abhay Krishnan
+            </motion.h1>
+            <motion.h2 
+              style={{color:"red"}}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Web Developer
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <span style={{color:"green"}}>THIS</span> IS MY OFFICIAL PORTFOLIO WEBSITE TO DESCRIBE ALL <br />
+              DETAILS AND WORK EXPERIENCE WEB DEVELOPMENT.
+            </motion.p>
+            <motion.a 
+              className="download" 
+              href={cv} 
+              target="_blank"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              DOWNLOAD/VIEW CV
+            </motion.a>
+          </div>
             
-           
-            <div>
-              <img src={me} alt="" className='me'/>
-            </div>
-        </div>
-      <About />
-      <Skills/>
-      <Projects/>
-      <Contact/>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            <img src={me} alt="" className='me'/>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <About />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <Skills/>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <Projects/>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <Contact/>
+        </motion.div>
       </div>
       
     </>

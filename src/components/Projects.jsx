@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import mediaplayer from '../Assets/mediaplayer.png'
@@ -10,103 +10,114 @@ import weather from '../Assets/Screenshot (15).png'
 import './Projects.css'
 
 function Projects() {
+    const projects = [
+        {
+            title: "Media Player",
+            img: mediaplayer,
+            tech: "React, HTML, CSS, Bootstrap",
+            github: "https://github.com/abhayk012/Mediaplayer_Front-end-react-project-",
+            link: "https://mediaplayer-front-end-react-project.vercel.app/"
+        },
+        {
+            title: "QR Code Generator",
+            img: qr,
+            tech: "React, HTML, CSS, Bootstrap",
+            github: "https://github.com/abhayk012/QR-code-generator",
+            link: "https://qr-code-generator-rho-nine.vercel.app/"
+        },
+        {
+            title: "Netflix Clone",
+            img: netflix,
+            tech: "React, HTML, CSS, Bootstrap",
+            github: "https://github.com/abhayk012/Netflix-Clone-1",
+            link: "https://silver-bunny-412bb1.netlify.app/"
+        },
+        {
+            title: "Counter",
+            img: count,
+            tech: "React, HTML, CSS, Bootstrap",
+            github: "https://github.com/abhayk012/Counter-Redux",
+            link: "https://counter-redux-jade.vercel.app/"
+        },
+        {
+            title: "Weather App",
+            img: weather,
+            tech: "HTML, CSS, Bootstrap",
+            github: "https://github.com/abhayk012/Weather-by-abhay",
+            link: "https://abhayk012.github.io/Weather-by-abhay/"
+        },
+        {
+            title: "Palaharam",
+            img: food,
+            tech: "React, HTML, CSS, Bootstrap",
+            github: "https://github.com/abhayk012/Chayakkada",
+            link: "https://chayakkada.vercel.app/"
+        }
+    ]
+
+    const container = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
+
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+
     return (
-        <div id="projects">
-            <h1 className='text-center'><span style={{color:"green"}}>My </span>Projects</h1>
-            <div className='d-flex justify-content-center mt-5'>
-
-                <Card style={{ width: '18rem' }} >
-                    <Card.Img variant="top" src={mediaplayer} />
-                    <Card.Body className='cbody'>
-                        <Card.Title>Media Player</Card.Title>
-                        <Card.Text>
-                        Created using React,HTML,CSS,Bootstrap
-                        </Card.Text>
-                        <div className='d-flex'>
-                            <Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://github.com/abhayk012/Mediaplayer_Front-end-react-project-"><i class="fa-brands fa-github"></i></a></Button>
-                            <Button variant="primary" className='ms-3'><a style={{textDecoration:"none",color:"white"}} href="https://mediaplayer-front-end-react-project.vercel.app/"><i class="fa-solid fa-link"></i></a></Button>
-                        </div>
-                    </Card.Body>
-                </Card>
-
-                <Card style={{ width: '18rem' }} className='ms-5'>
-                    <Card.Img variant="top" src={qr} />
-                    <Card.Body className='cbody'>
-                        <Card.Title>QR Code generator</Card.Title>
-                        <Card.Text>
-                        Created using React,HTML,CSS,Bootstrap
-                        </Card.Text>
-                        <div className='d-flex'>
-                            <Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://github.com/abhayk012/QR-code-generator"><i class="fa-brands fa-github"></i></a></Button>
-                            <Button variant="primary" className='ms-3'><a style={{textDecoration:"none",color:"white"}} href="https://qr-code-generator-rho-nine.vercel.app/"><i class="fa-solid fa-link"></i></a></Button>
-                        </div>
-                    </Card.Body>
-                </Card>
-
-                <Card style={{ width: '18rem' }} className='ms-5'>
-                    <Card.Img variant="top" src={netflix} />
-                    <Card.Body className='cbody'>
-                        <Card.Title>Netflix Clone</Card.Title>
-                        <Card.Text>
-                        Created using React,HTML,CSS,Bootstrap
-                        </Card.Text>
-                        <div className='d-flex'>
-                            <Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://github.com/abhayk012/Netflix-Clone-1"><i class="fa-brands fa-github"></i></a></Button>
-                            <Button variant="primary" className='ms-3'><a style={{textDecoration:"none",color:"white"}} href="https://silver-bunny-412bb1.netlify.app/"><i class="fa-solid fa-link"></i></a></Button>
-                        </div>
-
-                    </Card.Body>
-                </Card>
-            </div>
-            <div className='d-flex justify-content-center mt-5'>
-
-                <Card style={{ width: '18rem' }} >
-                    <Card.Img variant="top" src={count} />
-                    <Card.Body className='cbody'>
-                        <Card.Title>Counter</Card.Title>
-                        <Card.Text>
-                        Created using React,HTML,CSS,Bootstrap
-                        </Card.Text>
-                        <div className='d-flex'>
-                            <Button variant="success"><a href="https://github.com/abhayk012/Counter-Redux" style={{textDecoration:"none",color:"white"}}></a><i class="fa-brands fa-github"></i></Button>
-                            <Button variant="primary" className='ms-3'><a href="https://counter-redux-jade.vercel.app/" style={{textDecoration:"none",color:"white"}}></a><i class="fa-solid fa-link"></i></Button>
-                        </div>
-                    </Card.Body>
-                </Card>
-
-                <Card style={{ width: '18rem' }}className='ms-5'>
-      <Card.Img variant="top" src={weather} />
-      <Card.Body className='cbody'>
-        <Card.Title>Weather app</Card.Title>
-        <Card.Text>
-        Created using HTML,CSS,Bootstrap
-        </Card.Text>
-        <div className='d-flex'>
-        <Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://github.com/abhayk012/Weather-by-abhay"></a><i class="fa-brands fa-github"></i></Button>
-        <Button variant="primary" className='ms-3'><a style={{textDecoration:"none",color:"white"}} href="https://abhayk012.github.io/Weather-by-abhay/"><i class="fa-solid fa-link"></i></a></Button>
-        </div>
-      </Card.Body>
-    </Card>
-
-    <Card style={{ width: '18rem' }}className='ms-5'>
-      <Card.Img variant="top" src={food} />
-      <Card.Body className='cbody'>
-        <Card.Title>Palaharam
-        </Card.Title>
-        <Card.Text>
-          Created using React,HTML,CSS,Bootstrap
-        </Card.Text>
-        <div className='d-flex'>
-        <Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://github.com/abhayk012/Chayakkada"><i class="fa-brands fa-github"></i></a></Button>
-        <Button variant="primary" className='ms-3'><a style={{textDecoration:"none",color:"white"}} href="https://chayakkada.vercel.app/"><i class="fa-solid fa-link"></i></a></Button>
-        </div>
-      </Card.Body>
-    </Card>
-
-            </div>
-
-        </div>
+        <section id="projects" className="projects-section">
+            <h1 className='text-center section-title'><span style={{color:"green"}}>My </span>Projects</h1>
+            
+            <motion.div 
+                className='projects-grid'
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+            >
+                {projects.map((project, index) => (
+                    <motion.div key={index} variants={item}>
+                        <Card className="project-card h-100">
+                            <div className="card-img-container">
+                                <Card.Img variant="top" src={project.img} />
+                            </div>
+                            <Card.Body className='cbody'>
+                                <Card.Title>{project.title}</Card.Title>
+                                <Card.Text>
+                                    Created using {project.tech}
+                                </Card.Text>
+                                <div className='d-flex gap-2 mt-auto'>
+                                    <Button variant="success">
+                                        <a style={{textDecoration:"none",color:"white"}} href={project.github} target="_blank" rel="noopener noreferrer">
+                                            <i className="fa-brands fa-github"></i>
+                                        </a>
+                                    </Button>
+                                    <Button variant="primary">
+                                        <a style={{textDecoration:"none",color:"white"}} href={project.link} target="_blank" rel="noopener noreferrer">
+                                            <i className="fa-solid fa-link"></i>
+                                        </a>
+                                    </Button>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </motion.div>
+                ))}
+            </motion.div>
+        </section>
     )
 }
+
 
 export default Projects

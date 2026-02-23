@@ -1,106 +1,120 @@
 /* contact  */
 
-
-.icon-set{
-    display:flex;
-    justify-content: center;
-    margin-top: 3%;
-    align-items: center;
-	
-}
-.icon1,.icon2,.icon3, .icon4,.icon5,.ua{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.icon-set {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 
-
-.icon1 i{
-    font-size: 30px;
-    color: black;
+.icon1,
+.icon2,
+.icon3,
+.icon4,
+.icon5 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.icon2 i{
-    font-size: 30px;
-    color: black;
-}
-.icon3 i{
-    font-size: 30px;
-    color: black;
-}
-.icon4 i{
-    font-size: 30px;
-    color: black;
-}
-.icon5 i{
-    font-size: 30px;
-    color: black;
+.icon1 i,
+.icon2 i,
+.icon3 i,
+.icon4 i,
+.icon5 i {
+  font-size: 24px;
+  color: black;
 }
 
-.icon1:hover{
-    background-image: linear-gradient(to bottom right ,rgb(0, 4, 255),rgb(0, 0, 0));
+.icon1:hover {
+  background-image: linear-gradient(to bottom right, #0077b5, #000);
 }
-.icon2:hover{
-    background-image: linear-gradient(to bottom right ,green,rgb(0, 0, 0));
+.icon2:hover {
+  background-image: linear-gradient(to bottom right, #333, #000);
 }
 .icon3:hover {
-    background-image: linear-gradient(to bottom right ,rgb(0, 110, 255),red);
+  background-image: linear-gradient(to bottom right, #405de6, #e1306c);
 }
-.icon4:hover{
-    background-image: linear-gradient(to bottom right ,rgb(0, 4, 255),rgb(0, 174, 255));
+.icon4:hover {
+  background-image: linear-gradient(to bottom right, #1877f2, #000);
 }
-.icon5:hover{
-    background-image: linear-gradient(to bottom right ,rgb(255, 0, 0),rgb(255, 0, 0));
-}
-.icon1:hover i{
-    color: white;   
-}
-.icon2:hover i{
-    color: white;   
-}
-.icon3:hover i{
-    color: white;   
-}
-.icon4:hover i{
-    color: white;   
-}
-.icon5:hover i{
-    color: white;   
+.icon5:hover {
+  background-image: linear-gradient(to bottom right, red, #b00);
 }
 
-.heading{
-    text-align: center;
-margin-top: 50px;
-}
-.heading h3{
-    color: green;
+.icon1:hover i,
+.icon2:hover i,
+.icon3:hover i,
+.icon4:hover i,
+.icon5:hover i {
+  color: white;
 }
 
-
-
-.rights{
-    text-align: center;
-    margin-top: 50px;
+.heading {
+  text-align: center;
+  margin-top: 80px;
 }
-.ua:hover{
-    color: rgb(253, 253, 253);
-    
-     i{
-		transition:transform  .9s;
-		margin-bottom: 10px;
-	}
-} 
-.ua{
-    border-radius: 50%;
-    float: right;
-    background-color: black;
-    color:white;
-    margin: 0px 10px 50px 0px;
-    text-decoration: none;
+
+.rights {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
 }
-footer{
-    text-align: center;
+
+.ua {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2d302c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ua:hover {
+  color: white;
+}
+
+.up-arrow i {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .icon1,
+  .icon2,
+  .icon3,
+  .icon4,
+  .icon5 {
+    width: 50px;
+    height: 50px;
+  }
+  .icon1 i,
+  .icon2 i,
+  .icon3 i,
+  .icon4 i,
+  .icon5 i {
+    font-size: 20px;
+  }
+  .ua {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
 }

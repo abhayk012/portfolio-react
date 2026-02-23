@@ -1,153 +1,200 @@
 .App {
-    width: 100%;
-    height: 411vh;
-    transition: background-color 0.25s ease-in-out;
-  }
-  
-.nav{
-background-color: rgb(45, 48, 44);
-
+  width: 100%;
+  min-height: 100vh;
+  transition: background-color 0.25s ease-in-out;
+  padding-top: 80px; /* Space for fixed navbar */
 }
-.navname{
+
+.nav {
+  background-color: rgb(45, 48, 44);
+  z-index: 1000;
+}
+.navname {
   color: white;
 }
 
-  #light{
-    background-color: white;
-    color: black;
-  }
-  
-#dark{
-  background-color: black;
-  color: white;
-  .toggle + label::after{
-    background-color: black;
-  }
-  .toggle + label::before{
-    background-color: white;
-  }
-  label{
-    color: white;
-  }
-  .skills__list-item {
-    
-    background-color: rgb(255, 255, 255);
-    color: black;
-  }
-  .cbody{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-.nav{
-  background-color: rgb(240, 240, 240); 
-}
-.navname{
-  color: rgb(0, 0, 0);
-}
-.icon1 i {
-  color: rgb(255, 255, 255);
-}
-
-.icon2 i {
-  color: rgb(255, 255, 255);
-}
-
-.icon3 i {
-  color: rgb(255, 255, 255);
-}
-
-.icon4 i {
-  color: rgb(255, 255, 255);
-}
-.icon5 i {
-  color: rgb(255, 255, 255);
-}
-.download {
-  text-decoration: none;
-  font-weight: bold;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border-radius: 5px;
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 30px 0px;
-  margin-left: 80px;
-}
-.ua{
+#light {
   background-color: white;
-}
-.ua i{
   color: black;
 }
 
-
+#dark {
+  background-color: black;
+  color: white;
+  .toggle + label::after {
+    background-color: black;
   }
-
-  .toggle-container {
-    position: absolute;
-    top: 2em;
-    right: 2em;
+  .toggle + label::before {
+    background-color: white;
   }
-  
-  .toggle {
-    visibility: hidden;
+  label {
+    color: white;
   }
-  
-  .toggle + label {
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-    cursor: pointer;
+  .skills__list-item {
+    background-color: rgb(255, 255, 255);
     color: black;
   }
-  
-  .toggle + label::before {
-    content: "";
-    height: 1em;
-    width: 2em;
-    border-radius: 1em;
-    background-color: black;
-    margin-right: 0.5em;
-    transition: background-color 250ms ease-in-out;
+  .cbody {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   }
-  
-  .toggle + label::after {
-    content: "";
-    height: 0.8em;
-    width: 0.8em;
-    border-radius: 1em;
-    background-color: white;
-    position: absolute;
-    left: 0.2em;
-    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+  .nav {
+    background-color: rgb(240, 240, 240);
   }
-  
-  .toggle:checked + label::after {
-    transform: translateX(100%);
+  .navname {
+    color: rgb(0, 0, 0);
   }
-  
-  .myname{
-    margin-top: 300px;
-    margin-left: 100px;
-    
+  .icon1 i {
+    color: rgb(255, 255, 255);
   }
 
-  .me{
-    margin-top: 200px;
-    margin-left: 300px;
-    border-radius: 50%;
-    filter: drop-shadow(20px 7px 5px black);
-    height: 400px;
+  .icon2 i {
+    color: rgb(255, 255, 255);
   }
 
-  .download{
+  .icon3 i {
+    color: rgb(255, 255, 255);
+  }
+
+  .icon4 i {
+    color: rgb(255, 255, 255);
+  }
+  .icon5 i {
+    color: rgb(255, 255, 255);
+  }
+  .download {
     text-decoration: none;
     font-weight: bold;
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-radius: 5px;
     display: inline-block;
     padding: 10px 20px;
     margin: 30px 0px;
-    margin-left: 80px;
+  }
+  .ua {
+    background-color: white;
+  }
+  .ua i {
+    color: black;
+  }
+}
+
+.toggle-container {
+  position: fixed;
+  top: 5rem;
+  right: 2em;
+  z-index: 1001;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.toggle + label {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: black;
+}
+
+.toggle + label::before {
+  content: "";
+  height: 1em;
+  width: 2em;
+  border-radius: 1em;
+  background-color: black;
+  margin-right: 0.5em;
+  transition: background-color 250ms ease-in-out;
+}
+
+.toggle + label::after {
+  content: "";
+  height: 0.8em;
+  width: 0.8em;
+  border-radius: 1em;
+  background-color: white;
+  position: absolute;
+  left: 0.2em;
+  transition:
+    background-color 250ms ease-in-out,
+    transform 250ms ease-in-out;
+}
+
+.toggle:checked + label::after {
+  transform: translateX(100%);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10%;
+  min-height: calc(100vh - 80px);
+  flex-wrap: wrap;
+}
+
+.myname {
+  margin-top: 50px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.me {
+  border-radius: 50%;
+  filter: drop-shadow(20px 7px 5px black);
+  height: clamp(250px, 30vw, 450px);
+  width: auto;
+  object-fit: cover;
+  margin-top: 50px;
+}
+
+.download {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 30px 0px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .myname {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .me {
+    margin-left: 0;
+  }
+  .download {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .App {
+    padding-top: 60px;
+  }
+  .toggle-container {
+    top: 4.5rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .me {
+    height: 250px;
+  }
 }
